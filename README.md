@@ -17,8 +17,7 @@ Trains interpretable + high-performance models
 
 Evaluates models using metrics that truly matter (Recall, AUC, F1)
 
-📂 Project Structure:
-§
+📂 Project Structure
 .
 ├── data/
 │   ├── raw/                     <- Add dataset here manually
@@ -44,7 +43,6 @@ Evaluates models using metrics that truly matter (Recall, AUC, F1)
 ├── environment.yml
 ├── LICENSE
 └── README.md
-§
 This structure mirrors ML engineering standards in fintech and fraud analytics teams.
 
 📊 Dataset
