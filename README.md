@@ -1,23 +1,22 @@
-# Credit Card Fraud Detection 🚨💳
+Credit Card Fraud Detection 🚨💳
 
 A complete end-to-end machine learning pipeline designed to detect fraudulent credit card transactions. This project focuses on handling extreme class imbalance, maximizing recall for the minority fraud class, and building reproducible, industry-grade ML workflows.
 
----
+🧠 Why This Project Matters
 
-## 🧠 Why This Project Matters  
 Credit card fraud is one of the most critical challenges in financial security, costing businesses billions annually. Standard rule-based systems often fail due to rapidly evolving fraud patterns and heavily imbalanced data.
 
 This project demonstrates:
-- Real-world **class imbalance handling**
-- Clean **ML engineering structure**
-- Practical fraud detection workflow
-- A foundation for deploying real-time fraud detection systems
 
----
+Real-world class imbalance handling
 
-## 📂 Project Structure
+Clean ML engineering structure
 
-```text
+Practical fraud detection workflow
+
+A foundation for deploying real-time fraud detection systems
+
+📂 Project Structure
 .
 ├── data/
 │   ├── raw/              <- Download dataset manually and place here
@@ -40,9 +39,7 @@ This project demonstrates:
 ├── LICENSE
 └── README.md
 
-
-
-Dataset:
+📊 Dataset
 
 Name: Credit Card Fraud Detection
 
@@ -109,11 +106,13 @@ Neural networks for tabular data
 
 Real-time fraud scoring API (AWS Lambda)
 
-| Model               | Precision | Recall (Fraud) | F1-Score | ROC-AUC |
-| ------------------- | --------- | -------------- | -------- | ------- |
-| Logistic Regression | 0.63      | 0.78           | 0.70     | 0.94    |
-| Random Forest       | 0.91      | 0.89           | 0.90     | 0.99    |
-| XGBoost             | 0.96      | 0.93           | 0.94     | 0.99    |
+📈 Expected Results (Example Template)
+Model	Precision	Recall (Fraud)	F1-Score	ROC-AUC
+Logistic Regression	0.63	0.78	0.70	0.94
+Random Forest	0.91	0.89	0.90	0.99
+XGBoost	0.96	0.93	0.94	0.99
+
+(Replace later with your actual metrics.)
 
 🧠 Key Skills Demonstrated
 
@@ -145,7 +144,12 @@ Deploy using AWS Lambda + API Gateway
 
 Try autoencoders for anomaly detection
 
-Author
+📄 License
+
+This project is licensed under the MIT License — see the LICENSE
+ file.
+
+👨‍💻 Author
 
 Prasanth Balisetty
 Graduate Data Scientist
