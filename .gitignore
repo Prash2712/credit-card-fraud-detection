@@ -1,0 +1,37 @@
+# Data files
+data/raw/*
+data/processed/*
+*.csv
+*.zip
+*.json
+*.npy
+*.wav
+*.mp3
+
+# Model weights & artifacts
+*.h5
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.sav
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.env
+.env/
+
+# Logs
+*.log
+
+# IDE & OS files
+.DS_Store
+.vscode/
+.idea/

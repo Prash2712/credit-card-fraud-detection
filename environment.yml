@@ -1,0 +1,15 @@
+name: fraud-env
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - scikit-learn
+  - notebook
+  - matplotlib
+  - seaborn
+  - pip
+  - pip:
+      - xgboost
+      - imbalanced-learn
