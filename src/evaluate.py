@@ -1,30 +1,40 @@
 import joblib
-import pandas as pd
-from sklearn.metrics import classification_report, roc_auc_score
+from sklearn.metrics import (
+    average_precision_score,
+    classification_report,
+    roc_auc_score,
+)
+from sklearn.model_selection import train_test_split
+
 from data_loader import load_data
-from preprocess import scale_features
+
 
 def evaluate_model():
-    # Load dataset
+    """Evaluate persisted artifacts on the same deterministic hold-out definition used in training."""
     df = load_data("data/raw/creditcard.csv")
 
     X = df.drop("Class", axis=1)
     y = df["Class"]
 
-    # Load saved artifacts
+    _, X_test, _, y_test = train_test_split(
+        X,
+        y,
+        test_size=0.2,
+        random_state=42,
+        stratify=y,
+    )
+
     model = joblib.load("models/xgboost_fraud_detector.pkl")
     scaler = joblib.load("models/scaler.pkl")
 
-    # Scale features
-    X_scaled = scaler.transform(X)
+    X_test_scaled = scaler.transform(X_test)
+    predictions = model.predict(X_test_scaled)
+    probabilities = model.predict_proba(X_test_scaled)[:, 1]
 
-    # Predictions
-    preds = model.predict(X_scaled)
-    probs = model.predict_proba(X_scaled)[:, 1]
+    print(classification_report(y_test, predictions))
+    print(f"ROC-AUC: {roc_auc_score(y_test, probabilities):.4f}")
+    print(f"Average precision: {average_precision_score(y_test, probabilities):.4f}")
 
-    # Metrics
-    print("Classification Report:\n", classification_report(y, preds))
-    print("ROC-AUC Score:", roc_auc_score(y, probs))
 
 if __name__ == "__main__":
     evaluate_model()
