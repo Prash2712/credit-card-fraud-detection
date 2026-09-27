@@ -1,5 +1,7 @@
 # Credit Card Fraud Detection
 
+![Python](https://img.shields.io/badge/Python-3-blue.svg)
+
 Fraud data is a good place to make an apparently small evaluation mistake look impressive. The positive class is tiny, so overall accuracy is almost useless, resampling before a train/test split leaks information, and ROC-AUC can look healthy while the precision-recall trade-off is still poor.
 
 This repo keeps the pipeline deliberately small and concentrates on those boundaries.
@@ -30,6 +32,14 @@ The expected target is `Class`, with `1` for a fraudulent transaction.
 The split happens before scaling and SMOTE. The scaler sees only training rows, and synthetic minority examples are created only inside the training partition.
 
 The test set therefore keeps the original prevalence. That is important: balancing the test set would make precision much easier to interpret incorrectly.
+
+## Tech stack
+
+- Python — data loading, preprocessing, training and evaluation scripts
+- XGBoost — gradient-boosted classifier
+- scikit-learn — stratified splitting, scaling, classification metrics
+- imbalanced-learn — train-only SMOTE oversampling
+- GitHub Actions — source checks
 
 ## Metrics
 
